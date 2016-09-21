@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.allShirts {
+    background: beige;
+    color: #81bce5;
+    font-size: 2vw;
+    font-family: arial, sans-serif;
+}
+
+.allShirts li {
+    list-style: none;
+    float: left;
+}
+
+.allShirts .shirt {
+    position: relative;
+    width: 20%;
+    margin: 25px 2.5%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .allShirts .shirt {
+        width: 30vw;
+        margin: 25px 1.5%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .allShirts .shirt {
+        width: 40vw;
+        margin: 25px 2.5%;
+    }
+}
+
+.allShirts .shirt .top {
+    border: 2px solid #5ca4d6;
+}
+
+.allShirts .shirt .top .rotateButton {
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    border: 2px solid #5ca4d6;
+}
+
+.allShirts .shirt .top img {
+    width: 100%;
+    padding: 5%;
+}
+
+.allShirts .shirt .bottom {
+    height: 3.5vw;
+    border: 2px solid #5ca4d6;
+    border-top: 0;
+}
+
+.allShirts .shirt .bottom ul {
+    height: 100%;
+}
+
+.allShirts .shirt .bottom li {
+    text-align: center;
+    padding: 3% 0;
+    width: 20%;
+    height: 100%;
+}
+
+.allShirts .shirt .bottom li:nth-child(2), .allShirts .shirt .bottom li:nth-child(4) {
+    border-left: 2px solid #5ca4d6;
+    border-right: 2px solid #5ca4d6;
+}
+
+.allShirts .shirt .bottom li.size {
+    position: relative;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes {
+    position: absolute;
+    width: 130%;
+    height: 11vw;
+    top: -12vw;
+    left: -0.5vw;
+    background: white;
+    border: 2px solid #5ca4d6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes .triangleBlue {
+    position: absolute;
+    bottom: -1.1vw;
+    left: 26%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1vw 1vw 0 1vw;
+    border-color: #81bce5 transparent transparent transparent;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes .triangleWhite {
+    position: absolute;
+    bottom: -0.8vw;
+    left: 26%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1vw 1vw 0 1vw;
+    border-color: white transparent transparent transparent;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div {
+    position: relative;
+    margin: 0 auto;
+    width: 75%;
+    height: 25%;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .xLarge {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .large {
+    width: 100%;
+    padding: 5px 8px;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .medium {
+    width: 100%;
+    padding: 5px 11px;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .small {
+    width: 100%;
+    padding: 0 13px;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .sizeXLargeText {
+    position: absolute;
+    top: 0;
+    line-height: 3vw;
+    font-size: 0.9vw;
+    left: 34%;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .sizeLargeText {
+    position: absolute;
+    top: 0;
+    line-height: 3.5vw;
+    font-size: 0.9vw;
+    left: 43%;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .sizeMediumText {
+    position: absolute;
+    top: 0;
+    line-height: 3.3vw;
+    font-size: 0.7vw;
+    left: 43%;
+}
+
+.allShirts .shirt .bottom li.size .moreSizes div .sizeSmallText {
+    position: absolute;
+    top: 0;
+    line-height: 2vw;
+    font-size: 0.7vw;
+    left: 43%;
+}
+
+.allShirts .shirt .bottom li.size:hover {
+    overflow: visible;
+}
+
+.allShirts .shirt .bottom li.size:hover .moreSizes {
+    color: #81bce5;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 1vw);
+}
+
+.allShirts .shirt .bottom li.color {
+    position: relative;
+}
+
+.allShirts .shirt .bottom li.color .pinkSquare {
+    color: #d583ac;
+}
+
+.allShirts .shirt .bottom li.color .yellowSquare {
+    color: #deb17e;
+}
+
+.allShirts .shirt .bottom li.color .moreColors {
+    padding: 0.2vw;
+    position: absolute;
+    width: 130%;
+    height: 5vw;
+    top: -6vw;
+    left: -0.5vw;
+    background: white;
+    border: 2px solid #5ca4d6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease;
+}
+
+.allShirts .shirt .bottom li.color .moreColors .blue {
+    float: left;
+    /*padding-top: 3px;*/
+    width: 50%;
+    height: 50%;
+    color: #81bce5;
+}
+
+.allShirts .shirt .bottom li.color .moreColors .pink {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: #d583ac;
+}
+
+.allShirts .shirt .bottom li.color .moreColors .yellow {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: #deb17e;
+}
+
+.allShirts .shirt .bottom li.color .moreColors .green {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: #8bb992;
+}
+
+.allShirts .shirt .bottom li.color .moreColors .triangleBlue {
+    position: absolute;
+    bottom: -1.1vw;
+    left: 26%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1vw 1vw 0 1vw;
+    border-color: #81bce5 transparent transparent transparent;
+}
+
+.allShirts .shirt .bottom li.color .moreColors .triangleWhite {
+    position: absolute;
+    bottom: -0.8vw;
+    left: 26%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1vw 1vw 0 1vw;
+    border-color: white transparent transparent transparent;
+}
+
+.allShirts .shirt .bottom li.color:hover {
+    overflow: visible;
+}
+
+.allShirts .shirt .bottom li.color:hover .moreColors {
+    color: #81bce5;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 1vw);
+}
+
+.allShirts .shirt .bottom li:hover {
+    background: #81bce5;
+    color: white;
+}
+
+.allShirts .shirt .nameAndPrice {
+    line-height: 4vw;
+    padding: 40px 0;
+    font-style: normal;
+}
+
+.allShirts .shirt .nameAndPrice .name {
+    float: left;
+}
+
+.allShirts .shirt .nameAndPrice .price {
+    font-weight: bold;
+    float: right;
+}
+
+.blueShirt {
+    -webkit-filter: invert(50%) sepia(100%) hue-rotate(150deg);
+}
+
+.pinkShirt {
+    -webkit-filter: invert(50%) sepia(100%) hue-rotate(250deg);
+}
+
+.yellowShirt {
+    -webkit-filter: invert(50%) sepia(100%) hue-rotate(350deg);
+}
+
+
+/*# sourceMappingURL=main.css.map */

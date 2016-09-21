@@ -1,0 +1,251 @@
+@mixin border($sides:"all") {
+  @if $sides == "sides" {
+    border-left: 2px solid #5ca4d6;
+    border-right: 2px solid #5ca4d6;
+  }
+  @if $sides == "all" {
+    border: 2px solid #5ca4d6;
+  }
+}
+
+@mixin subMenu($top, $height) {
+  position: absolute;
+  width: 130%;
+  height: $height;
+  top: $top;
+  left: -0.5vw;
+  background: white;
+  @include border;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s ease;
+}
+
+@mixin colorSquares() {
+  .blue {
+    float: left;
+    /*padding-top: 3px;*/
+    width: 50%;
+    height: 50%;
+    color: #81bce5;
+  }
+
+  .pink {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: $pinkColor;
+  }
+
+  .yellow {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: #deb17e;
+  }
+
+  .green {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: #8bb992;
+  }
+}
+
+@mixin triangles() {
+  .triangleBlue {
+    position: absolute;
+    bottom: -1.1vw;
+    left: 26%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1vw 1vw 0 1vw;
+    border-color: $blueColor transparent transparent transparent;
+  }
+  .triangleWhite {
+    position: absolute;
+    bottom: -0.8vw;
+    left: 26%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1vw 1vw 0 1vw;
+    border-color: white transparent transparent transparent;
+  }
+}
+
+@mixin smallShirts() {
+  position: relative;
+  margin: 0 auto;
+  width: 75%;
+  height: 25%;
+
+  .xLarge {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .large {
+    width: 100%;
+    padding: 5px 8px;
+  }
+  .medium {
+    width: 100%;
+    padding: 5px 11px;
+  }
+  .small {
+    width: 100%;
+    padding: 0 13px;
+  }
+  .sizeXLargeText {
+    position: absolute;
+    top: 0;
+    line-height: 3vw;
+    font-size: 0.9vw;
+    left: 34%;
+  }
+  .sizeLargeText {
+    position: absolute;
+    top: 0;
+    line-height: 3.5vw;
+    font-size: 0.9vw;
+    left: 43%;
+  }
+  .sizeMediumText {
+    position: absolute;
+    top: 0;
+    line-height: 3.3vw;
+    font-size: 0.7vw;
+    left: 43%;
+  }
+  .sizeSmallText {
+    position: absolute;
+    top: 0;
+    line-height: 2vw;
+    font-size: 0.7vw;
+    left: 43%;
+  }
+}
+
+@mixin sizeShirts() {
+  &.size {
+      position: relative;
+
+      .moreSizes {
+          @include subMenu(-12vw, 11vw);
+          @include triangles;
+
+          div {
+              @include smallShirts;
+          }
+      }
+
+      &:hover {
+          overflow: visible;
+
+          .moreSizes {
+              color: $blueColor;
+              visibility: visible;
+              opacity: 1;
+              transform: translate(0, 1vw);
+          }
+      }
+  }
+}
+
+@mixin colorOptions() {
+  &.color {
+      position: relative;
+
+      .pinkSquare {
+          color: $pinkColor;
+      }
+
+      .yellowSquare {
+          color: #deb17e;
+      }
+
+      .moreColors {
+          padding: 0.2vw;
+          @include subMenu(-6vw, 5vw);
+          @include colorSquares;
+          @include triangles;
+      }
+
+      &:hover {
+          overflow: visible;
+
+          .moreColors {
+              color: $blueColor;
+              visibility: visible;
+              opacity: 1;
+              transform: translate(0, 1vw);
+          }
+      }
+  }
+}
+
+@mixin topContainer() {
+  .top {
+      @include border;
+
+      .rotateButton {
+          background: white;
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 4px;
+          @include border;
+      }
+
+      img {
+          width: 100%;
+          padding: 5%;
+      }
+  }
+}
+
+@mixin bottomContainer() {
+  .bottom {
+      height: 3.5vw;
+      @include border;
+      border-top: 0;
+
+      ul {
+          height: 100%;
+      }
+
+      li {
+          text-align: center;
+          padding: 3% 0;
+          width: 20%;
+          height: 100%;
+
+          &:nth-child(2),
+          &:nth-child(4) {
+              @include border("sides");
+          }
+
+          @include sizeShirts;
+          @include colorOptions;
+
+          &:hover {
+              background: $blueColor;
+              color: white;
+          }
+      }
+  }
+}
+
+@mixin media($bp) {
+  @if $bp == 1000 {
+    @media only screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+  @if $bp == 700 {
+    @media only screen and (max-width: 700px) {
+      @content;
+    }
+  }
+}

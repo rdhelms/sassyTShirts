@@ -1,0 +1,49 @@
+$blueColor: #81bce5;
+$pinkColor: #d583ac;
+$yellowColor: #deb17e;
+
+.allShirts {
+    color: $blueColor;
+    font-size: 2vw;
+    font-family: arial, sans-serif;
+
+    li {
+        list-style: none;
+        float: left;
+    }
+
+    .shirt {
+        position: relative;
+        width: 20%;
+        margin: 25px 2.5%;
+
+        @include media(1000) {
+            width: 30vw;
+            margin: 25px 1.5%;
+        }
+
+        @include media(700) {
+            width: 40vw;
+            margin: 25px 2.5%;
+        }
+
+        @include topContainer;
+
+        @include bottomContainer;
+
+        .nameAndPrice {
+            line-height: 4vw;
+            padding: 40px 0;
+            font-style: normal;
+
+            .name {
+                float: left;
+            }
+
+            .price {
+                font-weight: bold;
+                float: right;
+            }
+        }
+    }
+}
